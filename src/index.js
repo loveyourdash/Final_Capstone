@@ -40,7 +40,7 @@ function gameOver() {
   if (time > 0) {
     return showUp();
   } else {
-    clearScore(); // Reset the score to 0 when game is over
+    clearScore();
     return stopGame();
   }
 }
@@ -109,10 +109,10 @@ function stopGame() {
 }
 
 function startGame() {
-  setDuration(10); // Set game duration to 10 seconds
-  startTimer(); // Start the timer
-  showUp(); // Show the mole
-  return "game started"; // Return confirmation message
+  setDuration(10); 
+  startTimer(); 
+  showUp(); 
+  return "game started"; 
 }
 
 // Attach event listeners to moles
