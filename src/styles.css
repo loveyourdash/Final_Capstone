@@ -37,7 +37,7 @@ h2 {
 
 .grid {
   width: 600px;
-  height: 400px;
+  height: 300px;
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
@@ -66,7 +66,7 @@ h2 {
 
 .mole {
   /*background:url('./assets/mole.png') bottom center no-repeat;*/
-  background:url('https://github.com/Thinkful-Ed/js-dev-final-capstone-starter/blob/main/assets/mole.png?raw=true') bottom center no-repeat;
+  background:url('https://github.com/loveyourdash/Final_Capstone/blob/main/assets/cat.png?raw=true') bottom center no-repeat;
   background-size: 40%;
   position: absolute;
   top: 100%;
