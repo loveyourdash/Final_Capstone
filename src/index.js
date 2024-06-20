@@ -40,6 +40,7 @@ function gameOver() {
   if (time > 0) {
     return showUp();
   } else {
+    clearScore(); // Reset the score to 0 when game is over
     return stopGame();
   }
 }
@@ -77,31 +78,29 @@ function clearScore() {
 }
 
 function updateTimer() {
-  timerDisplay.textContent = time + ' seconds left.';
-  time--;
+  if (time > 0) {
+    time -= 1;
+    timerDisplay.textContent = time;
+  }
   if (time < 0) {
-    return gameOver();
+    gameOver();
   }
 }
 
 function startTimer() {
   timer = setInterval(updateTimer, 1000);
-  return timer;
 }
 
 function whack(event) {
   updateScore();
-  return points;
 }
 
-function setEventListeners() {
+function setEventListeners(moles) {
   moles.forEach(mole => mole.addEventListener('click', whack));
-  return moles;
 }
 
 function setDuration(duration) {
   time = duration;
-  return time;
 }
 
 function stopGame() {
@@ -110,11 +109,16 @@ function stopGame() {
 }
 
 function startGame() {
-  setDuration(10);
-  showUp();
-  return "game started";
+  setDuration(10); // Set game duration to 10 seconds
+  startTimer(); // Start the timer
+  showUp(); // Show the mole
+  return "game started"; // Return confirmation message
 }
 
+// Attach event listeners to moles
+setEventListeners(moles);
+
+// Event listener for the start button
 startButton.addEventListener("click", startGame);
 
 // Please do not modify the code below.
